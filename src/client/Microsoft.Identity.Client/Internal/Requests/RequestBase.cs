@@ -227,6 +227,7 @@ namespace Microsoft.Identity.Client.Internal.Requests
             var idtItem = tuple.Item2;
             Account account = tuple.Item3;
 
+            var aditionalProperties = GetAdditionalPropertiesFromResponse(msalTokenResponse);
             return new AuthenticationResult(
                 atItem,
                 idtItem,
@@ -235,7 +236,21 @@ namespace Microsoft.Identity.Client.Internal.Requests
                 msalTokenResponse.TokenSource,
                 AuthenticationRequestParameters.RequestContext.ApiEvent,
                 account,
-                msalTokenResponse.SpaAuthCode);
+                msalTokenResponse.SpaAuthCode,
+                aditionalProperties);
+        }
+
+        private IReadOnlyDictionary<string, string> GetAdditionalPropertiesFromResponse(MsalTokenResponse msalTokenResponse)
+        {
+            if (!string.IsNullOrEmpty(msalTokenResponse.SpaAccountId))
+            {
+                return new Dictionary<string, string>
+                {
+                    { TokenResponseClaim.SpaAccountId, msalTokenResponse.SpaAccountId }
+                };
+            }
+
+            return CollectionHelpers.EmptyROStringDictionary;
         }
 
         private void ValidateAccountIdentifiers(ClientInfo fromServer)

@@ -40,6 +40,7 @@ namespace Microsoft.Identity.Client.OAuth2
         public const string FamilyId = "foci";
         public const string RefreshIn = "refresh_in";
         public const string SpaCode = "spa_code";
+        public const string SpaAccountId = "spa_accountId";
         public const string ErrorSubcode = "error_subcode";
         public const string ErrorSubcodeCancel = "cancel";
 
@@ -59,6 +60,7 @@ namespace Microsoft.Identity.Client.OAuth2
 
         private const string iOSBrokerErrorMetadata = "error_metadata";
         private const string iOSBrokerHomeAccountId = "home_account_id";
+
         [JsonProperty(TokenResponseClaim.TokenType)]
         public string TokenType { get; set; }
 
@@ -103,6 +105,10 @@ namespace Microsoft.Identity.Client.OAuth2
 
         [JsonProperty(TokenResponseClaim.SpaCode)]
         public string SpaAuthCode { get; set; }
+
+        // See: https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3994 
+        [JsonProperty(TokenResponseClaim.SpaAccountId)]
+        public string SpaAccountId { get; set;  }
 
         [JsonProperty(TokenResponseClaim.Authority)]
         public string AuthorityUrl { get; set; }

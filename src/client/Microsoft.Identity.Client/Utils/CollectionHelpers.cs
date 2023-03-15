@@ -34,11 +34,24 @@ namespace Microsoft.Identity.Client.Utils
 
         public static IDictionary<TKey, TValue> GetEmptyDictionary<TKey, TValue>()
         {
-#if NET_CORE
+#if NET
             return System.Collections.Immutable.ImmutableDictionary<TKey, TValue>.Empty;
 #else
             return new Dictionary<TKey, TValue>();
 #endif
+        }
+
+        private static Dictionary<string, string> s_emptyROStringDictionary = new Dictionary<string, string>();
+        public static IReadOnlyDictionary<string, string> EmptyROStringDictionary
+        {
+            get
+            {
+#if NET
+                return System.Collections.Immutable.ImmutableDictionary<string, string>.Empty;
+#else
+            return s_emptyROStringDictionary;
+#endif
+            }
         }
     }
 }

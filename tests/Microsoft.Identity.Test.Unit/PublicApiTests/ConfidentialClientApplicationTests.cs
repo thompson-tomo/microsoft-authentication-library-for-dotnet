@@ -1464,6 +1464,33 @@ namespace Microsoft.Identity.Test.Unit.PublicApiTests
         }
 
         [TestMethod]
+        public async Task GetSpaAccoutnId_HybridSpa_Async()
+        {
+            using (var httpManager = new MockHttpManager())
+            {
+                var app = ConfidentialClientApplicationBuilder.Create(TestConstants.ClientId)
+                    .WithAuthority(new Uri(ClientApplicationBase.DefaultAuthority), true)
+                    .WithRedirectUri(TestConstants.RedirectUri)
+                    .WithClientSecret(TestConstants.ClientSecret)
+                    .WithHttpManager(httpManager)
+                    .BuildConcrete();
+
+                httpManager.AddInstanceDiscoveryMockHandler();
+                var handler = httpManager.AddSuccessTokenResponseMockHandlerForPost(
+                    responseMessage: MockHelpers.CreateSuccessResponseMessage(
+                        MockHelpers.GetHybridSpaTokenResponse(spaCode: null, spaAccountId: "42")));
+
+                var result = await app.AcquireTokenByAuthorizationCode(TestConstants.s_scope, TestConstants.DefaultAuthorizationCode)
+                .WithSpaAuthorizationCode(true)
+                .ExecuteAsync()
+                .ConfigureAwait(false);
+
+                Assert.IsNull(result.SpaAuthCode);
+                Assert.AreEqual("42", result.AdditionalProtocolMessages["spa_account_id"]);
+            }
+        }
+
+        [TestMethod]
         public async Task AcquireTokenByRefreshTokenTestAsync()
         {
             using (var httpManager = new MockHttpManager())

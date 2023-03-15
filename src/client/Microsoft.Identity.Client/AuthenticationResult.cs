@@ -130,7 +130,8 @@ namespace Microsoft.Identity.Client
             TokenSource tokenSource, 
             ApiEvent apiEvent,
             Account account,
-            string spaAuthCode = null)
+            string spaAuthCode = null, 
+            IReadOnlyDictionary<string, string> additionalProtocolMessages = null)
         {
             _authenticationScheme = authenticationScheme ?? throw new ArgumentNullException(nameof(authenticationScheme));
             
@@ -162,6 +163,7 @@ namespace Microsoft.Identity.Client
             CorrelationId = correlationID;
             ApiEvent = apiEvent;
             AuthenticationResultMetadata = new AuthenticationResultMetadata(tokenSource);
+            AdditionalProtocolMessages = additionalProtocolMessages;
 
             if (msalAccessTokenCacheItem != null)
             {
@@ -279,6 +281,13 @@ namespace Microsoft.Identity.Client
         /// Contains metadata for the Authentication result.
         /// </summary>
         public AuthenticationResultMetadata AuthenticationResultMetadata { get; }
+
+        /// <summary>
+        /// Contains additional response messages from the server not included in the properties of <see cref="AuthenticationResult"/>. 
+        /// </summary>
+        /// <remarks>Only a subset of properties are added to this collection. 
+        /// Only available from when the response comes from the identity provider, i.e. not from the cache</remarks>
+        public IReadOnlyDictionary<string, string> AdditionalProtocolMessages { get; }
 
         /// <summary>
         /// Creates the content for an HTTP authorization header from this authentication result, so
