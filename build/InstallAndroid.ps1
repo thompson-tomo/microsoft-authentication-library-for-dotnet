@@ -1,4 +1,4 @@
-$url = "https://dl.google.com/android/repository/commandlinetools-win-7583922_latest.zip" #Android SDK Tools from https://developer.android.com/studio#downloads
+$url = "https://dl.google.com/android/repository/commandlinetools-win-10406996_latest.zip" #Android SDK Tools from https://developer.android.com/studio#downloads
 $fileName = "AndroidTools.zip"
 $source = "C:\Downloads\$fileName"
 $destination = "C:\Downloads\AndroidSdkTools"
