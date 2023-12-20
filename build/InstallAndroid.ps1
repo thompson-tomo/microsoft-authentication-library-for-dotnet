@@ -6,6 +6,8 @@ $androidSdk = "C:\Program Files (x86)\Android\android-sdk"
 $androidSdkVersion28 = "platforms;android-28"
 $androidSdkVersion29 = "platforms;android-29"
 $androidSdkVersion30 = "platforms;android-30"
+$androidSdkVersion31 = "platforms;android-31"
+$androidSdkVersion32 = "platforms;android-32"
 
 [Environment]::SetEnvironmentVariable("AndroidSdkDirectory", $androidSdk, [EnvironmentVariableTarget]::Machine)
 
@@ -43,3 +45,9 @@ echo y y y y y y y |C:\Downloads\AndroidSdkTools\cmdline-tools\bin\.\sdkmanager 
 
 echo "installing android 30"
 echo y y y y y y y |C:\Downloads\AndroidSdkTools\cmdline-tools\bin\.\sdkmanager "$androidSdkVersion30" --sdk_root="$androidSdk"
+
+echo "installing android 31"
+echo y y y y y y y |C:\Downloads\AndroidSdkTools\cmdline-tools\bin\.\sdkmanager "$androidSdkVersion31" --sdk_root="$androidSdk"
+
+echo "installing android 32"
+echo y y y y y y y |C:\Downloads\AndroidSdkTools\cmdline-tools\bin\.\sdkmanager "$androidSdkVersion32" --sdk_root="$androidSdk"
