@@ -7,6 +7,8 @@ $androidSdkVersion28 = "platforms;android-28"
 $androidSdkVersion29 = "platforms;android-29"
 $androidSdkVersion30 = "platforms;android-30"
 
+[Environment]::SetEnvironmentVariable("AndroidSdkDirectory", $androidSdk, [EnvironmentVariableTarget]::Machine)
+
 #$ErrorActionPreference = "Stop"
 
 if (Test-Path "$PSScriptRoot\win-installer-helper.psm1") 
