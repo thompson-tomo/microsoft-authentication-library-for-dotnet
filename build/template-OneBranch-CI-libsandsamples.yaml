@@ -13,8 +13,13 @@ steps:
   inputs:
     script: 'nuget locals all -clear'
 
-- powershell: 'powershell.exe -File "$(MsalSourceDir)build\InstallAndroid.ps1" -ExecutionPolicy Bypass'
+- task: PowerShell@2
   displayName: 'Install Android'
+  inputs:
+    targetType: 'filePath'
+    filePath: '$(MsalSourceDir)build\InstallAndroid.ps1'
+    arguments: '-ExecutionPolicy Bypass'
+    pwsh: false
 
 - task: VSBuild@1
   displayName: 'NuGet restore ${{ parameters.Solution }}'
