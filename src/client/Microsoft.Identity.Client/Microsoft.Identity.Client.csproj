@@ -177,6 +177,14 @@
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) Or '$(TargetFramework)' == '$(TargetFrameworkNet6Android)'">
+    <!-- Existing properties for Android -->
+    <AndroidSdkDirectory>C:\Program Files (x86)\Android\android-sdk\</AndroidSdkDirectory>
+    <AndroidSdkBuildToolsVersion>32.0.0</AndroidSdkBuildToolsVersion>
+    <AndroidCommandLineToolsVersion>3.0</AndroidCommandLineToolsVersion>
+  </PropertyGroup>
+
+
   <ItemGroup Condition=" '$(TargetFramework)' == '$(TargetFrameworkNetDesktop462)' ">
     <Compile Include="$(PathToMsalSources)\Platforms\Features\OpenTelemetry\**\*.cs" />
     
@@ -278,4 +286,5 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.IdentityModel.Abstractions" />
   </ItemGroup>
+  
 </Project>
