@@ -360,7 +360,7 @@ namespace Microsoft.Identity.Test.Unit.PublicApiTests
                                                                             .BuildConcrete();
 
                 //Validate new default redirect uri
-#if DESKTOP || NET6_WIN
+#if DESKTOP || NET7_WIN
                 Assert.AreEqual(Constants.NativeClientRedirectUri, app.AppConfig.RedirectUri);
 #elif NET_CORE 
                 Assert.AreEqual(app.AppConfig.RedirectUri, "http://localhost");
@@ -1056,7 +1056,7 @@ namespace Microsoft.Identity.Test.Unit.PublicApiTests
 
             if (enableBroker)
             {
-#if NET6_WIN && !NET6_0
+#if NET7_WIN && !NET6_0
                 pcaBuilder.WithBroker(new BrokerOptions(BrokerOptions.OperatingSystems.Windows));
 #elif !NET6_0
                 WamExtension.WithBroker(pcaBuilder, new BrokerOptions(BrokerOptions.OperatingSystems.Windows));

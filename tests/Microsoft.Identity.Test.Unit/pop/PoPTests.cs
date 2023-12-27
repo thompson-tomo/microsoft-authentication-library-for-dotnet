@@ -14,11 +14,11 @@ using Microsoft.Identity.Client;
 using Microsoft.Identity.Client.ApiConfig.Parameters;
 using Microsoft.Identity.Client.AppConfig;
 using Microsoft.Identity.Client.AuthScheme.PoP;
-#if !NET6_WIN && !NET6_0
+#if !NET7_WIN && !NET6_0
 using Microsoft.Identity.Client.Broker;
 #endif
 
-#if NET6_WIN
+#if NET7_WIN
 using Microsoft.Identity.Client.Platforms.Features.RuntimeBroker;
 #endif
 using Microsoft.Identity.Client.Internal;
@@ -522,7 +522,7 @@ namespace Microsoft.Identity.Test.Unit.Pop
             pcaBuilder = PublicClientApplicationBuilder
                                 .Create(TestConstants.ClientId);
 
-#if NET6_WIN
+#if NET7_WIN
             pcaBuilder.WithBroker(new BrokerOptions(BrokerOptions.OperatingSystems.Windows));
 #else
             pcaBuilder.WithBroker(new BrokerOptions(BrokerOptions.OperatingSystems.None));

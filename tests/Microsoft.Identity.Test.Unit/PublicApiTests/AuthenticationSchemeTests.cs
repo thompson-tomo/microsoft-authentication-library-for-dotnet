@@ -120,7 +120,7 @@ namespace Microsoft.Identity.Test.Unit.PublicApiTests
                     .WithTestBroker(mockBroker)
                     .WithHttpManager(harness.HttpManager);
 
-#if NET6_WIN
+#if NET7_WIN
                 pcaBuilder = pcaBuilder.WithBroker(true);
 #else
                 pcaBuilder = pcaBuilder.WithBroker();

@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFrameworkNetDesktop48>net48</TargetFrameworkNetDesktop48>
     <TargetFrameworkNet6>net6.0</TargetFrameworkNet6>
-    <TargetFrameworkNet6Win>net6.0-windows</TargetFrameworkNet6Win>
+    <TargetFrameworkNet7Win>net7.0-windows</TargetFrameworkNet7Win>
 
-    <TargetFrameworks>$(TargetFrameworkNetDesktop48);$(TargetFrameworkNet6);$(TargetFrameworkNet6Win)</TargetFrameworks>
+    <TargetFrameworks>$(TargetFrameworkNetDesktop48);$(TargetFrameworkNet6);$(TargetFrameworkNet7Win)</TargetFrameworks>
     <IsPackable>false</IsPackable>
 
     <LangVersion>latest</LangVersion>
@@ -83,7 +83,7 @@
   <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkNetDesktop48)' ">
     <DefineConstants>$(DefineConstants);DESKTOP</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkNet6Win)'">
-    <DefineConstants>$(DefineConstants);NET6_WIN</DefineConstants>
+  <PropertyGroup Condition="'$(TargetFramework)' == '$(TargetFrameworkNet7Win)'">
+    <DefineConstants>$(DefineConstants);NET7_WIN</DefineConstants>
   </PropertyGroup>
 </Project>

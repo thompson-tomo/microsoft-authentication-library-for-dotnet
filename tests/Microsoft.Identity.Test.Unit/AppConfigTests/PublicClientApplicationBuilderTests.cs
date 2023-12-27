@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Linq;
 using Microsoft.Identity.Client;
-#if !NET6_WIN && !NET7_0 && !NET6_0_OR_GREATER
+#if !NET7_WIN && !NET7_0 && !NET6_0_OR_GREATER
 using Microsoft.Identity.Client.Desktop;
 #endif
 using Microsoft.Identity.Client.Internal;
@@ -635,7 +635,7 @@ namespace Microsoft.Identity.Test.Unit.AppConfigTests
             Assert.IsTrue((pca.AppConfig as ApplicationConfiguration).CacheSynchronizationEnabled);
         }
 
-#if NET6_WIN
+#if NET7_WIN
         [TestMethod]
         public void IsBrokerAvailable_net6()
         {

@@ -18,7 +18,7 @@ using UIKit;
 using Android.App;
 #endif
 
-#if DESKTOP || NET6_WIN
+#if DESKTOP || NET7_WIN
 using System.Windows.Forms;
 #endif
 
@@ -170,7 +170,7 @@ namespace Microsoft.Identity.Client
             }
 #endif
 
-#if NET_CORE && !NET6_WIN
+#if NET_CORE && !NET7_WIN
             if (Config.BrokerCreatorFunc == null)
             {
                 throw new PlatformNotSupportedException(
@@ -180,7 +180,7 @@ namespace Microsoft.Identity.Client
             }
 #endif
 
-#if NET6_WIN
+#if NET7_WIN
             Config.BrokerOptions = new BrokerOptions(enableBroker ? BrokerOptions.OperatingSystems.Windows : BrokerOptions.OperatingSystems.None);
 #endif
 
@@ -195,10 +195,10 @@ namespace Microsoft.Identity.Client
 #if !SUPPORTS_BROKER || __MOBILE__
         [EditorBrowsable(EditorBrowsableState.Never)]
 #endif
-#if !NET6_WIN && !WINDOWS_APP && !__MOBILE__
+#if !NET7_WIN && !WINDOWS_APP && !__MOBILE__
         [Obsolete("This API has been replaced with WithBroker(BrokerOptions), which can be found in Microsoft.Identity.Client.Broker package. See https://aka.ms/msal-net-wam for details.", false)]
 #endif
-#if NET6_WIN
+#if NET7_WIN
         [Obsolete("This API has been replaced with WithBroker(BrokerOptions). See https://aka.ms/msal-net-wam for details.", false)]
 #endif
         public PublicClientApplicationBuilder WithWindowsBrokerOptions(WindowsBrokerOptions options)
@@ -209,7 +209,7 @@ namespace Microsoft.Identity.Client
             return this;
         }
 
-#if NET6_WIN
+#if NET7_WIN
         /// <summary>
         /// Brokers enable Single-Sign-On, device identification, and enhanced security.
         /// Use this API to enable brokers on desktop platforms.
@@ -305,7 +305,7 @@ namespace Microsoft.Identity.Client
         }
 #endif
 
-#if DESKTOP || NET6_WIN
+#if DESKTOP || NET7_WIN
         /// <summary>
         /// Sets a reference to the current IWin32Window that triggers the browser to be shown.
         /// Used to center the browser that pop-up onto this window.
@@ -324,7 +324,7 @@ namespace Microsoft.Identity.Client
         }
 #endif
 
-#if DESKTOP || NET6_WIN || NET_CORE || NETSTANDARD
+#if DESKTOP || NET7_WIN || NET_CORE || NETSTANDARD
         /// <summary>
         /// Sets a reference to the IntPtr to a window that triggers the browser to be shown.
         /// Used to center the browser that pop-up onto this window.

@@ -40,8 +40,8 @@ namespace Microsoft.Identity.Test.Unit
             Trace.WriteLine("Framework: .NET 6");
 #elif NET_CORE
             Trace.WriteLine("Framework: .NET Core");
-#elif NET6_WIN
-            Trace.WriteLine("Framework: .NET6-Win");
+#elif NET7_WIN
+            Trace.WriteLine("Framework: .NET7-Win");
 #endif
             Trace.WriteLine("Test started " + TestContext.TestName);
             TestCommon.ResetInternalStaticCaches();
