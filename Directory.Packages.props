@@ -29,6 +29,7 @@
     <PackageVersion Include="System.Xml.XDocument" Version="4.3.0" />
     <PackageVersion Include="System.Xml.XmlDocument" Version="4.3.0" />
     <PackageVersion Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
+    <PackageVersion Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22621.2428" />
     <PackageVersion Include="Xamarin.AndroidX.Browser" Version="1.4.0" PrivateAssets="All" />
 </ItemGroup>
 <ItemGroup>

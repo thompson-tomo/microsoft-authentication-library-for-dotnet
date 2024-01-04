@@ -113,5 +113,11 @@ namespace Microsoft.Identity.Client.PlatformsCommon.Interfaces
         bool BrokerSupportsWamAccounts { get; }
 
         IMsalHttpClientFactory CreateDefaultHttpClientFactory();
+
+        /// <summary>
+        /// Gets the DMA enforcement status of the platform. Its only applicable in Windows and returns false in other platforms.
+        /// </summary>
+        /// <returns>if DMA is enforced</returns>
+        bool IsDmaEnforced();
     }
 }

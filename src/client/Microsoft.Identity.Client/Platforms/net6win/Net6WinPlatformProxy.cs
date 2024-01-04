@@ -8,6 +8,8 @@ using Microsoft.Identity.Client.Platforms.Features.WebView2WebUi;
 using Microsoft.Identity.Client.Platforms.netcore;
 using Microsoft.Identity.Client.PlatformsCommon.Shared;
 using Microsoft.Identity.Client.UI;
+using Windows.Foundation.Metadata;
+using Windows.System.Profile;
 
 namespace Microsoft.Identity.Client.Platforms.net6win
 {
@@ -54,6 +56,19 @@ namespace Microsoft.Identity.Client.Platforms.net6win
             }
 
             return Constants.DefaultRedirectUri;
+        }
+
+        public override bool IsDmaEnforced()
+        {
+            if(ApiInformation.IsPropertyPresent("Windows.System.Profile.PlatformAutomaticAppSignInManager", "Policy"))
+            {
+                PlatformAutomaticAppSignInPolicy policy = PlatformAutomaticAppSignInManager.Policy;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
