@@ -23,7 +23,6 @@ namespace Microsoft.Identity.Client.AuthScheme.PoP
 {
     internal class PopAuthenticationScheme : IAuthenticationScheme
     {
-        private static readonly DateTime s_jwtBaselineTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         private readonly PoPAuthenticationConfiguration _popAuthenticationConfiguration;
         private readonly IPoPCryptoProvider _popCryptoProvider;
 
@@ -158,11 +157,11 @@ namespace Microsoft.Identity.Client.AuthScheme.PoP
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(Base64UrlHelpers.Encode(Encoding.UTF8.GetBytes(header)));
-            sb.Append(".");
+            sb.Append('.');
             sb.Append(Base64UrlHelpers.Encode(payload));
             string headerAndPayload = sb.ToString();
 
-            sb.Append(".");
+            sb.Append('.');
             sb.Append(Base64UrlHelpers.Encode(_popCryptoProvider.Sign(Encoding.UTF8.GetBytes(headerAndPayload))));
 
             return sb.ToString();

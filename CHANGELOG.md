@@ -1,3 +1,44 @@
+4.59.0
+==========
+### New Features
+- Removed support for deprecated Xamarin.Android 9 and Xamarin.Android 10 frameworks. MSAL.NET packages will no longer include `monoandroid90` and `monoandroid10.0` binaries and instead include `monoandroid12.0`. Xamarin.Android apps should now target framework version 12 (corresponding to Android API level 31) or above. See [3530](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3530).
+- Removed support for deprecated .NET 4.5 framework. MSAL.NET packages will no longer include `net45` binary. Existing applications should target at least .NET 4.6.2. See [4314](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4314).
+
+### Bug Fixes
+- When public client apps persist cache data on Linux platforms, exceptions are now thrown, instead of just logged. This behavior is now consistent with Windows and Mac cache accessors. See [4493](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4493).
+- Downgraded System.Diagnostics.DiagnosticSource dependency to 6.0.1 from 7.0.2 to enable apps to run in .NET 6 in-process Azure Functions. Added extra checks to prevent crashing if OpenTelemetry dependencies cannot be used in the app's runtime. See [4456](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4456).
+- MSAL now throws `MsalServiceException` instead of `MsalManagedIdentityException` in managed identity flows. See [4483](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4483).
+- Background proactive token refresh operation can now be cancelled using the cancelation token passed into the parent acquire token call. See [4473](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4473).
+- Fixed `SemaphoreFullException` happening in managed identity flows. See [4472](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4472).
+- Improved exception messages when using non-RSA certificates. See [4407](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4407).
+- Fixed a scenario when the same tokens are cached under different cache keys when an identity provider sends scopes in a different order. See [4474](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4474).
+
+4.58.1
+==========
+### New Features
+- Added `WithForceRefresh` support for silent flows using the Windows broker. See [4457](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4457).
+
+### Bug Fixes
+- Fixed a bug when a `x-ms-pkeyauth` HTTP header was incorrectly sent on Mac and Linux platforms. See [4445](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4445).
+- Fixed an issue with client capabilities and claims JSON not being merged correctly. See [4447](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4447).
+- MSAL can now be used in .NET 8 applications which use native AOT configuration binder source generator. See [4453](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4453).
+- Fixed an issue with sending an incorrect operating system descriptor in silent flows on Mac. See [4444](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4444).
+
+4.58.0
+==========
+### New Features
+- Removed support for deprecated .NET 4.6.1 framework and added .NET 4.6.2 support. MSAL.NET packages will no longer include `net461` binary. Existing .NET 4.6.1 apps will now reference .NET Standard 2.0 MSAL binary. See [4315](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4315).
+- MSAL.NET repository now supports Central Package Management. See [3434](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3434).
+- Added instrumentation to collect metrics with Open Telemetry. Aggregated metrics consist of successful and failed token acquisition calls, total request duration, duration in cache, and duration in a network call. See [4229](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4229)
+
+### Bug Fixes
+- Resolved the issue with dual-headed accounts that share the same UPN for both, Microsoft (MSA) and Microsoft Entra ID (Azure AD) accounts. See [4425](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4425).
+- MSAL now correctly falls back to use local cache if broker fails to return a result for `AcquireTokenSilent` calls. See [4395](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/pull/4395).
+- Fixed a bug when the cache level in the telemetry was not correctly set to L1 Cache when in-memory cache was used. See [4414](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/pull/4414).
+- Deprecated `WithAuthority` on the request builders. Set the authority on the application builders. Use `WithTenantId` or `WithTenantIdFromAuthority` on the request builder to update the tenant ID. See [4406](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/pull/4406).
+- Fixed an issue with the Windows broker dependencies when the app was targetting NativeAOT on Windows. See [4424](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/4424).
+- Updated Microsoft.Identity.Client.NativeInterop reference to version 0.13.14, which includes bug fixes and stability improvements. See [4439](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/pull/4439).
+
 4.57.0
 ==========
 ### New Features
@@ -158,7 +199,7 @@
 
 ### New Features
 - Removed support for deprecated `net5.0-windows10.0.17763.0` target. See [3770](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3770) and note below.  
-- Added support for `net6.0` and `net6.0-windows10.0.17763.0` targets. See [3682](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3682) and note below.  
+- Added support for `net6.0` and `net6.0-windows10.0.17763.0` targets. See [3682](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3682) and note below. Library is trimmable and uses System.Text.Json for serialization via code generation.
 - Removed support for old `xamarinmac20` target. See [3722](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3722).  
 - `WithProofOfPossession` for public client applications is now generally available. See [3767](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3767).  
 - Added telemetry to log Proof-of-Possession usage. See [3718](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/3718).  

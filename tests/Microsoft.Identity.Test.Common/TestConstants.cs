@@ -152,6 +152,15 @@ namespace Microsoft.Identity.Test.Unit
         public const string ClientCapabilitiesJson = @"{""access_token"":{""xms_cc"":{""values"":[""cp1"",""cp2""]}}}";
         // this a JSON merge from Claims and ClientCapabilitiesJson
         public const string ClientCapabilitiesAndClaimsJson = @"{""access_token"":{""xms_cc"":{""values"":[""cp1"",""cp2""]}},""userinfo"":{""given_name"":{""essential"":true},""nickname"":null,""email"":{""essential"":true},""email_verified"":{""essential"":true},""picture"":null,""http://example.info/claims/groups"":null},""id_token"":{""auth_time"":{""essential"":true},""acr"":{""values"":[""urn:mace:incommon:iap:silver""]}}}";
+        public const string ClaimsWithAccessToken = @"{""access_token"":{""nbf"":{""essential"":true, ""value"":""1701477303""}}}";
+        public const string ClientCapabilitiesAndClaimsJsonWithAccessToken = @"{""access_token"":{""xms_cc"":{""values"":[""cp1"",""cp2""]},""nbf"":{""essential"":true,""value"":""1701477303""}}}";
+        public const string EmptyClaimsJson = @"{}";
+        public const string ClaimsWithAdditionalClaim = @"{""access_token"":{""nbf"":{""essential"":true, ""value"":""1701477303""},""additional_claim"":{""key"":""value""}}}";
+        public const string MergedJsonWithAdditionalClaim = @"{""access_token"":{""xms_cc"":{""values"":[""cp1"",""cp2""]},""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""}}}";
+        public const string ClaimWithAdditionalKey = @"{""access_token"":{""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}},""some_other_key"":{""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}}}";
+        public const string MergedJsonWithAdditionalKey = @"{""access_token"":{""xms_cc"":{""values"":[""cp1"",""cp2""]},""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}},""some_other_key"":{""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}}}";
+        public const string ClaimWithAdditionalKeyAndAccessKey = @"{""some_other_key"":{""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}},""access_token"":{""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}}}";
+        public const string MergedJsonClaimWithAdditionalKeyAndAccessKey = @"{""access_token"":{""xms_cc"":{""values"":[""cp1"",""cp2""]},""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}},""some_other_key"":{""nbf"":{""essential"":true,""value"":""1701477303""},""additional_claim"":{""key"":""value""},""new_claim"":{""new_key"":""new_value""}}}";
 
         public const string DisplayableId = "displayable@id.com";
         public const string RedirectUri = "urn:ietf:wg:oauth:2.0:oob";
@@ -177,6 +186,7 @@ namespace Microsoft.Identity.Test.Unit
         public const string GivenName = "Joe";
         public const string FamilyName = "Doe";
         public const string Username = "joe@localhost.com";
+        public const string Email = "joe@contoso.com";
         public const string PKeyAuthResponse = "PKeyAuth Context=\"context\",Version=\"1.0\"";
 
         public const string RegionName = "REGION_NAME";
@@ -213,6 +223,7 @@ namespace Microsoft.Identity.Test.Unit
                 };
             }
         }
+
 
         public const string MsalCCAKeyVaultUri = "https://buildautomation.vault.azure.net/secrets/AzureADIdentityDivisionTestAgentSecret/";
         public const string MsalCCAKeyVaultSecretName = "AzureADIdentityDivisionTestAgentSecret";

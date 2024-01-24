@@ -26,9 +26,7 @@ namespace Microsoft.Identity.Client.Extensions.Msal
         /// </summary>
         internal StorageCreationProperties StorageCreationProperties { get; }
 
-
         internal const string PersistenceValidationDummyData = "msal_persistence_test";
-
 
         /// <summary>
         /// A default logger for use if the user doesn't want to provide their own.
@@ -129,20 +127,18 @@ namespace Microsoft.Identity.Client.Extensions.Msal
         /// <returns>Unprotected cache data</returns>
         public byte[] ReadData()
         {
-            byte[] data = null;
             try
             {
                 _logger.LogInformation($"Reading Data");
-                data = CacheAccessor.Read();
+                byte[] data = CacheAccessor.Read();
                 _logger.LogInformation($"Got '{data?.Length ?? 0}' bytes from file storage");
+                return data ?? Array.Empty<byte>();
             }
             catch (Exception e)
             {
                 _logger.LogError($"An exception was encountered while reading data from the {nameof(Storage)} : {e}");
                 throw;
             }
-
-            return data ?? new byte[0];
         }
 
         /// <summary>

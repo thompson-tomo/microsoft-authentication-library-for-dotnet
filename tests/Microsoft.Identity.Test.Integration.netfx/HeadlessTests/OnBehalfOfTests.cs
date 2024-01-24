@@ -13,7 +13,7 @@ using Microsoft.Identity.Test.Common;
 using Microsoft.Identity.Test.Common.Core.Helpers;
 using Microsoft.Identity.Test.Common.Core.Mocks;
 using Microsoft.Identity.Test.Integration.Infrastructure;
-using Microsoft.Identity.Test.Integration.net45.Infrastructure;
+using Microsoft.Identity.Test.Integration.Infrastructure;
 using Microsoft.Identity.Test.LabInfrastructure;
 using Microsoft.Identity.Test.Unit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -220,11 +220,11 @@ namespace Microsoft.Identity.Test.Integration.HeadlessTests
             Assert.AreEqual(TokenSource.Cache, clientResult.AuthenticationResultMetadata.TokenSource);
         }
 
-        [RunOn(TargetFrameworks.NetCore)]
+        [RunOn(TargetFrameworks.NetFx)]
         public async Task WithMultipleUsers_TestAsync()
         {
             var aadUser1 = (await LabUserHelper.GetDefaultUserAsync().ConfigureAwait(false)).User;
-            var aadUser2 = (await LabUserHelper.GetAdfsUserAsync(FederationProvider.AdfsV2, true).ConfigureAwait(false)).User;
+            var aadUser2 = (await LabUserHelper.GetDefaultUser2Async().ConfigureAwait(false)).User;
             var adfsUser = (await LabUserHelper.GetAdfsUserAsync(FederationProvider.ADFSv2019).ConfigureAwait(false)).User;
 
             await RunOnBehalfOfTestAsync(adfsUser, false).ConfigureAwait(false);
@@ -429,8 +429,12 @@ namespace Microsoft.Identity.Test.Integration.HeadlessTests
             catch (MsalUiRequiredException)
             {
                 Assert.IsFalse(silentCallShouldSucceed, "ATS should have found a token, but it didn't");
+                string u = user.Upn;
+                string p = user.GetOrFetchPassword();
+
                 authResult = await pca
                     .AcquireTokenByUsernamePassword(s_oboServiceScope, user.Upn, user.GetOrFetchPassword())
+                    //.AcquireTokenInteractive(s_oboServiceScope)
                     .ExecuteAsync(CancellationToken.None)
                     .ConfigureAwait(false);
                 Assert.AreEqual(TokenSource.IdentityProvider, authResult.AuthenticationResultMetadata.TokenSource);
