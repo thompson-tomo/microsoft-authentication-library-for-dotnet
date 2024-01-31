@@ -130,7 +130,7 @@ namespace Microsoft.Identity.Test.Integration.HeadlessTests
             string clientToken = authenticationResult.AccessToken;
 
             Trace.WriteLine("2. MidTier kicks off the long running process by getting an OBO token");
-            string cacheKey = null;
+            string cacheKey = "credential";
             authenticationResult = await middletierServiceApp.
                 InitiateLongRunningProcessInWebApi(downstreamApiScopes, clientToken, ref cacheKey)
                 .ExecuteAsync().ConfigureAwait(false);
