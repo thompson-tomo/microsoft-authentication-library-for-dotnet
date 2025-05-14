@@ -1,6 +1,6 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1707159353025,
-  "repoUrl": "https://github.com/AzureAD/microsoft-authentication-library-for-dotnet",
+  "lastUpdate": 1747215089123,
+  "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
       {
@@ -3842,6 +3842,42 @@ window.BENCHMARK_DATA = {
             "value": 368042.6842105263,
             "unit": "ns",
             "range": "± 12403.308638478913"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "travis.walker@microsoft.com",
+            "name": "Travis Walker",
+            "username": "trwalke"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "44a61420fd55449b236ba1b45041b423ee475e96",
+          "message": "Update CHANGELOG.md for 4.72.0 (#5267)\n\n* Update CHANGELOG.md\n\n* Update CHANGELOG.md\n\n* Update CHANGELOG.md",
+          "timestamp": "2025-05-12T22:38:15+01:00",
+          "tree_id": "d963a2c2ea7a74d58b0fe4915ba7e355423b129b",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/44a61420fd55449b236ba1b45041b423ee475e96"
+        },
+        "date": 1747215086003,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 259057.52409638555,
+            "unit": "ns",
+            "range": "± 13767.589163149298"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 385906.91,
+            "unit": "ns",
+            "range": "± 37416.90425033432"
           }
         ]
       }
