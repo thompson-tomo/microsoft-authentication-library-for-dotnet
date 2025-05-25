@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748186202618,
+  "lastUpdate": 1748186204122,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -8580,6 +8580,54 @@ window.BENCHMARK_DATA = {
             "value": 95705.01883951823,
             "unit": "ns",
             "range": "± 787.7310622459717"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "bogavril@microsoft.com",
+            "name": "Bogdan Gavril",
+            "username": "bgavrilMS"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3af98c7304cf248442eafd65f4faa07cae8153f3",
+          "message": "Update supportPolicy.md (#5282)\n\n* Update supportPolicy.md\n\n* taking customer feedback\n\n* Update supportPolicy.md\n\nCo-authored-by: Neha Bhargava <61847233+neha-bhargava@users.noreply.github.com>\n\n---------\n\nCo-authored-by: jennyf19 <jeferrie@microsoft.com>\nCo-authored-by: Neha Bhargava <61847233+neha-bhargava@users.noreply.github.com>",
+          "timestamp": "2025-05-23T16:45:11+01:00",
+          "tree_id": "f37ebef94a83bc42c6cb405736258b6e5d1fe7ef",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/3af98c7304cf248442eafd65f4faa07cae8153f3"
+        },
+        "date": 1748186203670,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: False)",
+            "value": 9467.642179048979,
+            "unit": "ns",
+            "range": "± 32.32293633594205"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: True)",
+            "value": 94207.47252604166,
+            "unit": "ns",
+            "range": "± 1024.9404511462772"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: False)",
+            "value": 19912.008728027344,
+            "unit": "ns",
+            "range": "± 58.895218250654764"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: True)",
+            "value": 96193.84424641928,
+            "unit": "ns",
+            "range": "± 601.8995940973201"
           }
         ]
       }
