@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748186205535,
+  "lastUpdate": 1748186206924,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -18788,6 +18788,66 @@ window.BENCHMARK_DATA = {
             "value": 304006.97,
             "unit": "ns",
             "range": "± 74247.767791968"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "bogavril@microsoft.com",
+            "name": "Bogdan Gavril",
+            "username": "bgavrilMS"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3af98c7304cf248442eafd65f4faa07cae8153f3",
+          "message": "Update supportPolicy.md (#5282)\n\n* Update supportPolicy.md\n\n* taking customer feedback\n\n* Update supportPolicy.md\n\nCo-authored-by: Neha Bhargava <61847233+neha-bhargava@users.noreply.github.com>\n\n---------\n\nCo-authored-by: jennyf19 <jeferrie@microsoft.com>\nCo-authored-by: Neha Bhargava <61847233+neha-bhargava@users.noreply.github.com>",
+          "timestamp": "2025-05-23T16:45:11+01:00",
+          "tree_id": "f37ebef94a83bc42c6cb405736258b6e5d1fe7ef",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/3af98c7304cf248442eafd65f4faa07cae8153f3"
+        },
+        "date": 1748186206504,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.TokenCacheTests.AcquireTokenSilent_TestAsync(CacheSize: (1, 10))",
+            "value": 12884.8423828125,
+            "unit": "ns",
+            "range": "± 65.4633841153907"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.TokenCacheTests.AcquireTokenSilent_TestAsync(CacheSize: (10000, 10))",
+            "value": 24257.74748447963,
+            "unit": "ns",
+            "range": "± 88.06143384589693"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.TokenCacheTests.GetAccountAsync_TestAsync(CacheSize: (1, 10))",
+            "value": 8145.253447312575,
+            "unit": "ns",
+            "range": "± 10.48003763698721"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.TokenCacheTests.GetAccountAsync_TestAsync(CacheSize: (10000, 10))",
+            "value": 50024.83037156325,
+            "unit": "ns",
+            "range": "± 55.959092541440086"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.TokenCacheTests.RemoveAccountAsync_TestAsync(CacheSize: (1, 10))",
+            "value": 50482.269230769234,
+            "unit": "ns",
+            "range": "± 1474.6864886541155"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.TokenCacheTests.RemoveAccountAsync_TestAsync(CacheSize: (10000, 10))",
+            "value": 326433.83,
+            "unit": "ns",
+            "range": "± 81694.89083329348"
           }
         ]
       }
