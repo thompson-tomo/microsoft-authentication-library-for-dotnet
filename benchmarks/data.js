@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1747215093127,
+  "lastUpdate": 1748186202618,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -3878,6 +3878,42 @@ window.BENCHMARK_DATA = {
             "value": 385906.91,
             "unit": "ns",
             "range": "± 37416.90425033432"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "bogavril@microsoft.com",
+            "name": "Bogdan Gavril",
+            "username": "bgavrilMS"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3af98c7304cf248442eafd65f4faa07cae8153f3",
+          "message": "Update supportPolicy.md (#5282)\n\n* Update supportPolicy.md\n\n* taking customer feedback\n\n* Update supportPolicy.md\n\nCo-authored-by: Neha Bhargava <61847233+neha-bhargava@users.noreply.github.com>\n\n---------\n\nCo-authored-by: jennyf19 <jeferrie@microsoft.com>\nCo-authored-by: Neha Bhargava <61847233+neha-bhargava@users.noreply.github.com>",
+          "timestamp": "2025-05-23T16:45:11+01:00",
+          "tree_id": "f37ebef94a83bc42c6cb405736258b6e5d1fe7ef",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/3af98c7304cf248442eafd65f4faa07cae8153f3"
+        },
+        "date": 1748186199462,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 273180.96,
+            "unit": "ns",
+            "range": "± 19133.073214587024"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 384727.23232323234,
+            "unit": "ns",
+            "range": "± 31065.39554592967"
           }
         ]
       }
