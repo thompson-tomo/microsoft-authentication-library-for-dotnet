@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748186206924,
+  "lastUpdate": 1748575005648,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -3914,6 +3914,42 @@ window.BENCHMARK_DATA = {
             "value": 384727.23232323234,
             "unit": "ns",
             "range": "± 31065.39554592967"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "83938949+ashok672@users.noreply.github.com",
+            "name": "Ashok Kumar Ramakrishnan",
+            "username": "ashok672"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5cd6c9bcb46fb04d29eef66a42101b5ab728ec52",
+          "message": "Hide ListOperatingSystemAccounts in intellisense (#5304)\n\n* Update BrokerOptions.cs\n\n* Update BrokerOptions.cs",
+          "timestamp": "2025-05-29T17:03:14-07:00",
+          "tree_id": "f57bdcbe1e7584765b62e61f53f3ed4fa98e0a74",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/5cd6c9bcb46fb04d29eef66a42101b5ab728ec52"
+        },
+        "date": 1748575002463,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 286344.8556701031,
+            "unit": "ns",
+            "range": "± 17672.16596679984"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 383287.73,
+            "unit": "ns",
+            "range": "± 34614.14027630584"
           }
         ]
       }
