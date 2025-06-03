@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748985397839,
+  "lastUpdate": 1748985399295,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -8748,6 +8748,54 @@ window.BENCHMARK_DATA = {
             "value": 98169.21560058594,
             "unit": "ns",
             "range": "± 774.8000862240168"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "90415114+gladjohn@users.noreply.github.com",
+            "name": "Gladwin Johnson",
+            "username": "gladjohn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7a8f398f311b6b7abd09b33b91d11d0f3dcabb0f",
+          "message": "Remove unused files in MSI Helper Service (#5319)\n\ndelete\n\nCo-authored-by: Gladwin Johnson <gljohns@microsoft.com>",
+          "timestamp": "2025-06-03T12:43:53-07:00",
+          "tree_id": "344d3af4fd3f58eb34ae6564842e877ecf52b54d",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/7a8f398f311b6b7abd09b33b91d11d0f3dcabb0f"
+        },
+        "date": 1748985398830,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: False)",
+            "value": 9061.572844441731,
+            "unit": "ns",
+            "range": "± 35.74204146856043"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: True)",
+            "value": 86443.56783621652,
+            "unit": "ns",
+            "range": "± 618.5160773302758"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: False)",
+            "value": 20454.424795297477,
+            "unit": "ns",
+            "range": "± 100.54772574776345"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: True)",
+            "value": 92322.1106741769,
+            "unit": "ns",
+            "range": "± 619.7148037485474"
           }
         ]
       }
