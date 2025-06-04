@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1748985402011,
+  "lastUpdate": 1749071789775,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -3986,6 +3986,42 @@ window.BENCHMARK_DATA = {
             "value": 399949.81,
             "unit": "ns",
             "range": "± 32299.907634635114"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "87724641+Robbie-Microsoft@users.noreply.github.com",
+            "name": "Robbie-Microsoft",
+            "username": "Robbie-Microsoft"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9fd9500cca0125250ad52668793b6bc778a6b05f",
+          "message": "Reworked retry policy functionality & Created IMDS retry policy (#5231)",
+          "timestamp": "2025-06-04T16:12:22-04:00",
+          "tree_id": "18724addce0a9426ce0b40490bd0c0c235884812",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/9fd9500cca0125250ad52668793b6bc778a6b05f"
+        },
+        "date": 1749071786067,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 270915.7068965517,
+            "unit": "ns",
+            "range": "± 11137.056792541845"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 395616.4747474748,
+            "unit": "ns",
+            "range": "± 35115.64676408609"
           }
         ]
       }
