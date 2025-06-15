@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1749071795887,
+  "lastUpdate": 1750022190524,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -4022,6 +4022,42 @@ window.BENCHMARK_DATA = {
             "value": 395616.4747474748,
             "unit": "ns",
             "range": "± 35115.64676408609"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "bogavril@microsoft.com",
+            "name": "Bogdan Gavril",
+            "username": "bgavrilMS"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0919b95d3578ee1dc8f0a804a626224f15636aa4",
+          "message": "Use HTTP 2 on .NET (#5314)\n\n* Use HTTP 2 on .NET\n\n* 1\n\n* Apply suggestions from code review\n\n* Test fix",
+          "timestamp": "2025-06-15T17:02:46Z",
+          "tree_id": "9e73d104cdef241d0744d29ab61112e33f84e6be",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/0919b95d3578ee1dc8f0a804a626224f15636aa4"
+        },
+        "date": 1750022187277,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 280369.12,
+            "unit": "ns",
+            "range": "± 17444.34350755846"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 406469.61,
+            "unit": "ns",
+            "range": "± 36742.64363118119"
           }
         ]
       }
