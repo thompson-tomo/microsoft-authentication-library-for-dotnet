@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1750022195156,
+  "lastUpdate": 1750108608131,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -4058,6 +4058,42 @@ window.BENCHMARK_DATA = {
             "value": 406469.61,
             "unit": "ns",
             "range": "± 36742.64363118119"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "90415114+gladjohn@users.noreply.github.com",
+            "name": "Gladwin Johnson",
+            "username": "gladjohn"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bbaa1bfd80bfeb5e1593e0de8be8a1e92b7e1e9a",
+          "message": "MAA POC  (#5339)\n\n* init\n\n* pr comments\n\n* pr comments\n\n* typos\n\n---------\n\nCo-authored-by: Gladwin Johnson <gljohns@microsoft.com>",
+          "timestamp": "2025-06-16T13:31:49-07:00",
+          "tree_id": "fb46efbf390099a24d40a0fa6b6934e805bc66f5",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/bbaa1bfd80bfeb5e1593e0de8be8a1e92b7e1e9a"
+        },
+        "date": 1750108604584,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 290471.26,
+            "unit": "ns",
+            "range": "± 20364.694802436003"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 404819.73,
+            "unit": "ns",
+            "range": "± 38176.912790841205"
           }
         ]
       }
