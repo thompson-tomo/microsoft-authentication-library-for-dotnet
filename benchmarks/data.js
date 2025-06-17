@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1750173394181,
+  "lastUpdate": 1750173396298,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -9168,6 +9168,54 @@ window.BENCHMARK_DATA = {
             "value": 95699.50059407552,
             "unit": "ns",
             "range": "± 402.47769873864286"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "62267180+fengga@users.noreply.github.com",
+            "name": "fengga",
+            "username": "fengga"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "97879bfde587d7c2931ac542c62bc2b36f6fd089",
+          "message": "Fix mac broker MAUI issues (#5328)\n\n* For mac broker flows, limit the \"start new message loop to guarantee go back to main thread\" logic to console app only. Maui app should not start a new message loop since it already has one running.\n\n* Fix mac test app warnings\n\n* tmp\n\n* Try to fix pipeline build issue\n\n* Update NativeInterop version to 0.19.1\n\n* Update mac console app version to 0.19.1\n\n* Still use NativeInterop 0.18.1\n\n* Add some logs",
+          "timestamp": "2025-06-17T11:33:43+01:00",
+          "tree_id": "aef059b0fdc8693cb8905b982849d5176ff2849a",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/97879bfde587d7c2931ac542c62bc2b36f6fd089"
+        },
+        "date": 1750173395415,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: False)",
+            "value": 9162.936555044991,
+            "unit": "ns",
+            "range": "± 41.209594049673946"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: True)",
+            "value": 86374.8490234375,
+            "unit": "ns",
+            "range": "± 720.2864539696384"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: False)",
+            "value": 19487.924686686198,
+            "unit": "ns",
+            "range": "± 65.93689160133279"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: True)",
+            "value": 94037.3244873047,
+            "unit": "ns",
+            "range": "± 613.5702065714542"
           }
         ]
       }
