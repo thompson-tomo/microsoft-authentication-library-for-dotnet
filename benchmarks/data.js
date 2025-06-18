@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1750173400503,
+  "lastUpdate": 1750216588070,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -4166,6 +4166,42 @@ window.BENCHMARK_DATA = {
             "value": 387681.2,
             "unit": "ns",
             "range": "± 37934.08616364322"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "bogavril@microsoft.com",
+            "name": "Bogdan Gavril",
+            "username": "bgavrilMS"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1bfa527b080357a9fa8c13022e9bbdb1bde46d5b",
+          "message": "Update public api (#5349)",
+          "timestamp": "2025-06-17T23:24:48+01:00",
+          "tree_id": "b0e2ab82f1858ef330153b4ddc6b9fafcfe00faf",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/1bfa527b080357a9fa8c13022e9bbdb1bde46d5b"
+        },
+        "date": 1750216584667,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 267462.62,
+            "unit": "ns",
+            "range": "± 17661.964768119742"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 392238.98,
+            "unit": "ns",
+            "range": "± 33599.68340353489"
           }
         ]
       }
