@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1750216592673,
+  "lastUpdate": 1750475795668,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -4202,6 +4202,42 @@ window.BENCHMARK_DATA = {
             "value": 392238.98,
             "unit": "ns",
             "range": "± 33599.68340353489"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "83938949+ashok672@users.noreply.github.com",
+            "name": "Ashok Kumar Ramakrishnan",
+            "username": "ashok672"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bccbce95f21aab86980c44ae2f695f909b987b8b",
+          "message": "Deprecate AcquireTokenByIntegratedWindowsAuth API (#5345)\n\n* Deprecate IntegratedWindowsAuth API\n\n* Update src/client/Microsoft.Identity.Client/IPublicClientApplication.cs\n\nCo-authored-by: Gladwin Johnson <90415114+gladjohn@users.noreply.github.com>\n\n* Update WsTrustWebRequestManager.cs\n\n* Update WsTrustWebRequestManager.cs\n\n* Fix build break\n\n---------\n\nCo-authored-by: Gladwin Johnson <90415114+gladjohn@users.noreply.github.com>",
+          "timestamp": "2025-06-20T16:48:54-07:00",
+          "tree_id": "261c30e0d0f56ca5feacca94db1c621d0b01babb",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/bccbce95f21aab86980c44ae2f695f909b987b8b"
+        },
+        "date": 1750475791793,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenForClient_TestAsync",
+            "value": 294472.2010309278,
+            "unit": "ns",
+            "range": "± 19264.926376581432"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenNoCacheTests.AcquireTokenOnBehalfOf_TestAsync",
+            "value": 392783.5051546392,
+            "unit": "ns",
+            "range": "± 44090.48547190664"
           }
         ]
       }
