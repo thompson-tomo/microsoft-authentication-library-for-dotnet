@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1750475795668,
+  "lastUpdate": 1750475797751,
   "repoUrl": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet",
   "entries": {
     "AcquireTokenNoCache": [
@@ -9336,6 +9336,54 @@ window.BENCHMARK_DATA = {
             "value": 96456.94230957031,
             "unit": "ns",
             "range": "± 829.8560945053873"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "83938949+ashok672@users.noreply.github.com",
+            "name": "Ashok Kumar Ramakrishnan",
+            "username": "ashok672"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bccbce95f21aab86980c44ae2f695f909b987b8b",
+          "message": "Deprecate AcquireTokenByIntegratedWindowsAuth API (#5345)\n\n* Deprecate IntegratedWindowsAuth API\n\n* Update src/client/Microsoft.Identity.Client/IPublicClientApplication.cs\n\nCo-authored-by: Gladwin Johnson <90415114+gladjohn@users.noreply.github.com>\n\n* Update WsTrustWebRequestManager.cs\n\n* Update WsTrustWebRequestManager.cs\n\n* Fix build break\n\n---------\n\nCo-authored-by: Gladwin Johnson <90415114+gladjohn@users.noreply.github.com>",
+          "timestamp": "2025-06-20T16:48:54-07:00",
+          "tree_id": "261c30e0d0f56ca5feacca94db1c621d0b01babb",
+          "url": "https://github.com/thompson-tomo/microsoft-authentication-library-for-dotnet/commit/bccbce95f21aab86980c44ae2f695f909b987b8b"
+        },
+        "date": 1750475796915,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: False)",
+            "value": 8967.385519845146,
+            "unit": "ns",
+            "range": "± 17.8538729949576"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (1, 10), EnableCacheSerialization: True)",
+            "value": 89275.08876255581,
+            "unit": "ns",
+            "range": "± 1370.215947412749"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: False)",
+            "value": 19609.189862060546,
+            "unit": "ns",
+            "range": "± 70.39137967449471"
+          },
+          {
+            "name": "Microsoft.Identity.Test.Performance.AcquireTokenForClientCacheTests.AcquireTokenForClient_TestAsync(CacheSize: (10000, 10), EnableCacheSerialization: True)",
+            "value": 89188.93659319196,
+            "unit": "ns",
+            "range": "± 278.90681559764334"
           }
         ]
       }
